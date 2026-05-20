@@ -3,97 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Packs | Sunway Pre-U Friendship Run</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Training Packs | Sunway Friendship Run</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/training.css">
 </head>
 <body>
-
+<a href="#mainContent" class="skip-link">Skip to main content</a>
 <header class="main-header">
-    <a href="index.html" class="site-logo">
-        <span>Sunway</span> Friendship Run
-    </a>
+    <a href="index.html" class="site-logo"><span>Sunway</span> Friendship Run</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
     </button>
 
-    <nav class="nav-menu" id="navMenu">
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="registration.html">Registration</a>
         <a href="training.html">Training Packs</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact Us</a>
-        <a href="registration.html" class="nav-cta">Login / Signup</a>
+        <a href="GOOGLE_FORM_URL_HERE" target="_blank" class="nav-cta">Join Waitlist</a>
     </nav>
 </header>
 
-<main class="page-main">
+<main id="mainContent" class="page-main">
 
-<section class="page-hero">
+<section class="training-hero reveal">
     <p class="label">Training Packs</p>
     <h1>Prepare without pressure.</h1>
     <p>
-        These beginner-friendly plans are designed for walkers, casual participants,
-        and runners who want to prepare steadily before race day.
+        Choose a simple preparation plan based on your comfort level. No prior running
+        experience is required.
     </p>
 </section>
 
-<section class="training-list">
+<section class="training-selector reveal delay-1" aria-label="Training plan categories">
+    <article>
+        <iconify-icon icon="solar:walking-round-bold-duotone"></iconify-icon>
+        <span>Beginner</span>
+        <strong>Walking Plan</strong>
+    </article>
 
-    <article class="training-plan">
-        <div>
+    <article>
+        <iconify-icon icon="solar:running-round-bold-duotone"></iconify-icon>
+        <span>Run-Walk</span>
+        <strong>Progressive Plan</strong>
+    </article>
+
+    <article>
+        <iconify-icon icon="solar:flag-2-bold-duotone"></iconify-icon>
+        <span>Runner</span>
+        <strong>5K Prep Plan</strong>
+    </article>
+</section>
+
+<section class="training-list">
+    <article class="training-plan reveal">
+        <div class="plan-head">
             <p class="plan-tag">Beginner</p>
             <h2>Walking Plan</h2>
-            <p>
-                Best for participants who want to complete the event comfortably
-                through walking.
-            </p>
+            <p>Best for participants who want to complete the event comfortably through walking.</p>
         </div>
 
-        <ul>
-            <li>Week 1: 15–20 minutes light walk, 3 times per week</li>
-            <li>Week 2: 20–25 minutes brisk walk, 3 times per week</li>
-            <li>Week 3: 30 minutes walk with short faster intervals</li>
-            <li>Week 4: Practice a comfortable event pace</li>
-        </ul>
+        <div class="plan-steps">
+            <div><span>01</span><p>15-20 minutes light walk, 3 times per week</p></div>
+            <div><span>02</span><p>20-25 minutes brisk walk, 3 times per week</p></div>
+            <div><span>03</span><p>30 minutes walk with short faster intervals</p></div>
+            <div><span>04</span><p>Practice a comfortable event pace</p></div>
+        </div>
     </article>
 
-    <article class="training-plan">
-        <div>
+    <article class="training-plan reveal">
+        <div class="plan-head">
             <p class="plan-tag">Run-Walk</p>
             <h2>Run-Walk Plan</h2>
-            <p>
-                Best for participants who want to alternate between jogging and walking.
-            </p>
+            <p>Best for participants who want to alternate between jogging and walking.</p>
         </div>
 
-        <ul>
-            <li>Week 1: 1 minute jog, 2 minutes walk, repeat 6 times</li>
-            <li>Week 2: 2 minutes jog, 2 minutes walk, repeat 6 times</li>
-            <li>Week 3: 3 minutes jog, 1 minute walk, repeat 6 times</li>
-            <li>Week 4: Maintain a comfortable run-walk rhythm</li>
-        </ul>
+        <div class="plan-steps">
+            <div><span>01</span><p>1 minute jog, 2 minutes walk, repeat 6 times</p></div>
+            <div><span>02</span><p>2 minutes jog, 2 minutes walk, repeat 6 times</p></div>
+            <div><span>03</span><p>3 minutes jog, 1 minute walk, repeat 6 times</p></div>
+            <div><span>04</span><p>Maintain a comfortable run-walk rhythm</p></div>
+        </div>
     </article>
 
-    <article class="training-plan">
-        <div>
+    <article class="training-plan reveal">
+        <div class="plan-head">
             <p class="plan-tag">Runner</p>
             <h2>5K Preparation Plan</h2>
-            <p>
-                Best for participants who want to run most or all of the route.
-            </p>
+            <p>Best for participants who want to run most or all of the route.</p>
         </div>
 
-        <ul>
-            <li>Week 1: Easy 2 KM run, 2–3 times per week</li>
-            <li>Week 2: Easy 3 KM run with light stretching</li>
-            <li>Week 3: 4 KM run at comfortable pace</li>
-            <li>Week 4: Light 5K practice before race week</li>
-        </ul>
+        <div class="plan-steps">
+            <div><span>01</span><p>Easy 2 KM run, 2-3 times per week</p></div>
+            <div><span>02</span><p>Easy 3 KM run with light stretching</p></div>
+            <div><span>03</span><p>4 KM run at a comfortable pace</p></div>
+            <div><span>04</span><p>Light 5K practice before race week</p></div>
+        </div>
     </article>
+</section>
 
+<section class="training-note reveal">
+    <iconify-icon icon="solar:info-circle-bold-duotone"></iconify-icon>
+    <div>
+        <h2>Train safely.</h2>
+        <p>Start slowly, drink water, rest when needed, and avoid pushing through pain. The goal is to finish comfortably.</p>
+    </div>
 </section>
 
 </main>
@@ -102,6 +121,7 @@
     <p>© 2026 Sunway Pre-U Friendship Run. All rights reserved.</p>
 </footer>
 
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

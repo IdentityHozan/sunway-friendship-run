@@ -1,0 +1,39 @@
+.contact-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 12px;
+}
+
+.contact-panel article {
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: 0.2s ease;
+}
+
+.contact-panel article:hover {
+    border-color: var(--blue-line);
+    background: var(--blue-soft);
+    transform: translateX(4px);
+}
+
+.contact-panel iconify-icon {
+    color: var(--blue);
+    font-size: 2.3rem;
+}
+
+.contact-panel h3 {
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.contact-panel p {
+    color: var(--muted);
+}

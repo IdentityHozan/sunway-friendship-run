@@ -1,0 +1,43 @@
+.registration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.reg-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px;
+    transition: 0.22s ease;
+    min-height: 220px;
+}
+
+.reg-card:hover {
+    border-color: var(--blue-line);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
+}
+
+.reg-card iconify-icon {
+    display: block;
+    color: var(--blue);
+    font-size: 2.7rem;
+    margin-bottom: 22px;
+}
+
+.reg-card h3 {
+    color: var(--navy);
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.reg-card p {
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .registration-grid {
+        grid-template-columns: 1fr;
+    }
+}

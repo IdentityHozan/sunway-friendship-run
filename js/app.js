@@ -1,15 +1,14 @@
-// Mobile navigation
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
 if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
+        const isOpen = navMenu.classList.toggle("show");
         menuToggle.classList.toggle("active");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 }
 
-// Active nav link
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -19,9 +18,16 @@ navLinks.forEach(link => {
     if (href === currentPage) {
         link.classList.add("active");
     }
+
+    link.addEventListener("click", () => {
+        if (navMenu && menuToggle) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+        }
+    });
 });
 
-// Detail tabs
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabPanels = document.querySelectorAll(".tab-panel");
 
@@ -42,7 +48,6 @@ tabButtons.forEach(button => {
     });
 });
 
-// FAQ accordion
 const faqItems = document.querySelectorAll(".faq-item");
 
 faqItems.forEach(item => {
@@ -69,7 +74,6 @@ faqItems.forEach(item => {
     });
 });
 
-// Modal system for information tiles
 const modalTriggers = document.querySelectorAll("[data-modal]");
 const modals = document.querySelectorAll(".modal");
 const modalCloseButtons = document.querySelectorAll(".modal-close");
@@ -79,8 +83,8 @@ modalTriggers.forEach(trigger => {
         const modalId = trigger.dataset.modal;
         const targetModal = document.getElementById(modalId);
 
-        modalTriggers.forEach(item => item.classList.remove("active"));
-        trigger.classList.add("active");
+        modalTriggers.forEach(item => item.classList.remove("is-selected"));
+        trigger.classList.add("is-selected");
 
         if (targetModal) {
             targetModal.classList.add("show");
@@ -90,9 +94,7 @@ modalTriggers.forEach(trigger => {
 });
 
 modalCloseButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        closeAllModals();
-    });
+    button.addEventListener("click", closeAllModals);
 });
 
 modals.forEach(modal => {
@@ -114,62 +116,22 @@ function closeAllModals() {
     document.body.style.overflow = "";
 }
 
-// Toast
-function showToast(message) {
-    const toast = document.getElementById("toast");
+const revealItems = document.querySelectorAll(".reveal");
 
-    if (!toast) return;
+const revealObserver = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
 
-    toast.textContent = message;
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 3000);
-}
-
-// Waitlist form
-const waitlistForm = document.getElementById("waitlistForm");
-
-if (waitlistForm) {
-    waitlistForm.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const formData = new FormData(waitlistForm);
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const programme = formData.get("programme");
-        const type = formData.get("type");
-
-        if (!name || !email || !programme || !type) {
-            showToast("Please complete the required fields.");
-            return;
-        }
-
-        waitlistForm.reset();
-        showToast("You have joined the VIP waitlist.");
-    });
-}
-
-// Contact form
-const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const formData = new FormData(contactForm);
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const type = formData.get("type");
-        const message = formData.get("message");
-
-        if (!name || !email || !type || !message) {
-            showToast("Please complete the required fields.");
-            return;
-        }
-
-        contactForm.reset();
-        showToast("Your message has been sent.");
-    });
-}
+revealItems.forEach(item => {
+    revealObserver.observe(item);
+});

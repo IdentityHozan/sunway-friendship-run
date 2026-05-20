@@ -3,115 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Sunway Pre-U Friendship Run</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Contact | Sunway Friendship Run</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-
+<a href="#mainContent" class="skip-link">Skip to main content</a>
 <header class="main-header">
-    <a href="index.html" class="site-logo">
-        <span>Sunway</span> Friendship Run
-    </a>
+    <a href="index.html" class="site-logo"><span>Sunway</span> Friendship Run</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
     </button>
 
-    <nav class="nav-menu" id="navMenu">
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="registration.html">Registration</a>
         <a href="training.html">Training Packs</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact Us</a>
-        <a href="registration.html" class="nav-cta">Login / Signup</a>
+        <a href="GOOGLE_FORM_URL_HERE" target="_blank" class="nav-cta">Join Waitlist</a>
     </nav>
 </header>
 
-<main class="page-main">
+<main id="mainContent" class="page-main">
 
-<section class="page-hero">
-    <p class="label">Contact Us</p>
-    <h1>Need help or want to collaborate?</h1>
-    <p>
-        Contact the organising committee for enquiries, sponsorship,
-        partnerships, registration support, or volunteer opportunities.
-    </p>
-</section>
+<section class="page-hero split-page-hero">
+    <div class="reveal">
+        <p class="label">Contact Us</p>
+        <h1>Need help or want to collaborate?</h1>
+        <p>
+            Contact the organising committee for registration support,
+            sponsorship, partnerships, volunteering, or general enquiries.
+        </p>
 
-<section class="form-section">
-    <div class="form-info">
-        <h2>Event Contact</h2>
+        <a href="GOOGLE_FORM_URL_HERE" target="_blank" class="btn btn-primary">Open Contact Form</a>
+    </div>
 
-        <article class="detail-card">
-            <span class="mini-icon icon-file"></span>
+    <div class="contact-panel reveal delay-1">
+        <article>
+            <iconify-icon icon="solar:letter-bold-duotone"></iconify-icon>
             <div>
                 <h3>Email</h3>
                 <p>friendshiprun@example.com</p>
             </div>
         </article>
 
-        <article class="detail-card">
-            <span class="mini-icon icon-card"></span>
+        <article>
+            <iconify-icon icon="solar:camera-bold-duotone"></iconify-icon>
             <div>
                 <h3>Instagram</h3>
                 <p>@sunwayfriendshiprun</p>
             </div>
         </article>
 
-        <article class="detail-card">
-            <span class="mini-icon icon-location"></span>
+        <article>
+            <iconify-icon icon="solar:map-point-wave-bold-duotone"></iconify-icon>
             <div>
                 <h3>Location</h3>
                 <p>Sunway College Campus</p>
             </div>
         </article>
     </div>
+</section>
 
-    <form class="form-card" id="contactForm">
-        <h2>Contact Form</h2>
+<section class="google-form-cta reveal">
+    <div>
+        <p class="label">Google Form</p>
+        <h2>All enquiries go through the official contact form.</h2>
+        <p>
+            This helps the committee track responses and respond to requests clearly.
+        </p>
+    </div>
 
-        <label>
-            Full Name
-            <input type="text" name="name" placeholder="Enter your full name" required>
-        </label>
-
-        <label>
-            Email Address
-            <input type="email" name="email" placeholder="Enter your email address" required>
-        </label>
-
-        <label>
-            Enquiry Type
-            <select name="type" required>
-                <option value="">Select enquiry type</option>
-                <option>Registration</option>
-                <option>Sponsorship</option>
-                <option>Partnership</option>
-                <option>Volunteer</option>
-                <option>General Enquiry</option>
-            </select>
-        </label>
-
-        <label>
-            Message
-            <textarea name="message" placeholder="Type your message here" required></textarea>
-        </label>
-
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-note">This is a placeholder form. A backend connection can be added later.</p>
-    </form>
+    <a href="GOOGLE_FORM_URL_HERE" target="_blank" class="btn btn-primary">Proceed to Contact Form</a>
 </section>
 
 </main>
-
-<div class="toast" id="toast">Message sent successfully.</div>
 
 <footer class="footer">
     <p>© 2026 Sunway Pre-U Friendship Run. All rights reserved.</p>
 </footer>
 
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

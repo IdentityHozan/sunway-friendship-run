@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | Sunway Pre-U Friendship Run</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="main-header">
+    <a href="index.html" class="site-logo">
+        <span>Sunway</span> Friendship Run
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration</a>
+        <a href="training.html">Training Packs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="registration.html" class="nav-cta">Login / Signup</a>
+    </nav>
+</header>
+
+<main class="page-main">
+
+<section class="page-hero">
+    <p class="label">VIP Waitlist</p>
+    <h1>Join the Friendship Run waitlist.</h1>
+    <p>
+        Be first to receive ticket launch updates, group discount information,
+        training resources, and important race day announcements.
+    </p>
+</section>
+
+<section class="form-section">
+    <div class="form-info">
+        <h2>Registration Details</h2>
+
+        <article class="detail-card">
+            <span class="mini-icon icon-ticket"></span>
+            <div>
+                <h3>Individual Entry</h3>
+                <p>Open to Pre-U students, alumni, and friends.</p>
+            </div>
+        </article>
+
+        <article class="detail-card">
+            <span class="mini-icon icon-grid"></span>
+            <div>
+                <h3>Group Signup</h3>
+                <p>Groups of 6 will receive a discounted registration rate.</p>
+            </div>
+        </article>
+
+        <article class="detail-card">
+            <span class="mini-icon icon-shield"></span>
+            <div>
+                <h3>Charity Event</h3>
+                <p>All proceeds will go toward charity.</p>
+            </div>
+        </article>
+    </div>
+
+    <form class="form-card" id="waitlistForm">
+        <h2>VIP Waitlist Form</h2>
+
+        <label>
+            Full Name
+            <input type="text" name="name" placeholder="Enter your full name" required>
+        </label>
+
+        <label>
+            Email Address
+            <input type="email" name="email" placeholder="Enter your email address" required>
+        </label>
+
+        <label>
+            Programme
+            <select name="programme" required>
+                <option value="">Select programme</option>
+                <option>A-Level</option>
+                <option>CIMP</option>
+                <option>AUSMAT</option>
+                <option>MUFP</option>
+                <option>Other</option>
+            </select>
+        </label>
+
+        <label>
+            Signup Type
+            <select name="type" required>
+                <option value="">Select signup type</option>
+                <option>Individual</option>
+                <option>Group of 6</option>
+                <option>Not sure yet</option>
+            </select>
+        </label>
+
+        <label>
+            Questions or Notes
+            <textarea name="message" placeholder="Optional"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary">Submit Waitlist</button>
+        <p class="form-note">This is a placeholder form. A backend connection can be added later.</p>
+    </form>
+</section>
+
+</main>
+
+<div class="toast" id="toast">Submission received.</div>
+
+<footer class="footer">
+    <p>© 2026 Sunway Pre-U Friendship Run. All rights reserved.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
